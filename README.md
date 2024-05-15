@@ -6,9 +6,8 @@ This is a coding challenge designed to evaluate your ability to write clean, con
 Following the submission of your work, you will be expected to sit through a code review with our engineers. Your work will be evaluated on the basis of:
 
 * Thoroughness and consistency with the design requirements;
-* Logic and code structure;
-* Security and performance best practices;
-* Testability, maintainability, and extensibility.
+* Clean code structure, and good use of performance and security standards;
+* Proper testing, maintainability, and extensibility best practices
 
 ## Code Submission
 In order to submit your work, please fork this repo and submit a pull request. There is no deadline for this assignment. However, timely submissions are encouraged as there may be other submissions under evaluation. 
