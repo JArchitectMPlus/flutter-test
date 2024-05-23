@@ -61,9 +61,11 @@ Sample response:
 
 Enable back navigation to the Home screen from the Quote Details screen.
 ### Sample UI 
-Here are mockups of what the implementation could look like
+Here are mockups of what the implementation could look like:
+> Note that these are rudimentary mockups to provide some guidance. Feel free to express your own creativity in your UI designs.
 
-![mockups](https://github.com/JArchitectMPlus/flutter-test/assets/169656293/92d9d2cb-c869-439b-af11-a85aea2c54ac)
+![proto](https://github.com/JArchitectMPlus/flutter-test/assets/169656293/80936d35-6194-47a0-9007-e304902f67d1)
+
 
 
 
