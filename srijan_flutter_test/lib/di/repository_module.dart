@@ -8,3 +8,9 @@ var quoteRepoProvider = Provider<QuotesRepository>(
     ref.read(quotesRemoteDSProvider),
   ),
 );
+
+var quoteDetailRepoProvider = Provider<QuotesRepository>(
+      (ref) => QuotesRepositoryImpl(
+    ref.read(quotesDetailRemoteDSProvider),
+  ),
+);

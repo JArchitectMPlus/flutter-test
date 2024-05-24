@@ -50,3 +50,9 @@ final quotesRemoteDSProvider = Provider<QuotesRemoteDS>(
     ref.read(apiServiceProvider),
   ),
 );
+
+final quotesDetailRemoteDSProvider = Provider<QuotesRemoteDS>(
+      (ref) => QuotesRemoteDSImpl(
+    ref.read(apiServiceProvider),
+  ),
+);

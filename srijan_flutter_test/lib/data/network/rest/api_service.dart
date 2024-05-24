@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
+import 'package:srijan_flutter_test/data/entity/quotes_detail_response_entity.dart';
 import 'package:srijan_flutter_test/data/entity/quotes_response_entity.dart';
 import 'package:srijan_flutter_test/domain/model/quotes/quotes_response.dart';
 
@@ -16,5 +17,5 @@ abstract class ApiService {
   Future<HttpResponse<List<QuotesResponseEntity>>> getQuotes(@Query("limit") int limit);
 
   @GET("/quotes/{:id}")
-  Future<HttpResponse<String>> getQuoteDetails(@Path(":id") String id);
+  Future<HttpResponse<QuotesDetailResponseEntity>> getQuoteDetails(@Path(":id") String id);
 }

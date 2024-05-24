@@ -21,7 +21,7 @@ class QuotesRepositoryImpl extends QuotesRepository {
     );
 
     return loginResponse.fold((l) => Left(l), (r) {
-      return Right(QuotesDetailResponse());
+      return Right(r.data.transform());
     });
   }
 

@@ -50,13 +50,14 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<HttpResponse<String>> getQuoteDetails(String id) async {
+  Future<HttpResponse<QuotesDetailResponseEntity>> getQuoteDetails(
+      String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _result =
-        await _dio.fetch<String>(_setStreamType<HttpResponse<String>>(Options(
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<HttpResponse<QuotesDetailResponseEntity>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -72,7 +73,7 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = _result.data!;
+    final value = QuotesDetailResponseEntity.fromJson(_result.data!);
     final httpResponse = HttpResponse(value, _result);
     return httpResponse;
   }
