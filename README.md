@@ -12,6 +12,7 @@ Following the submission of your work, you will be expected to sit through a cod
 
 ## Code Submission
 In order to submit your work, please fork this repo and submit a pull request. 
+
 There is no deadline for this assignment. However, timely submissions are encouraged as there may be other submissions under evaluation. 
 
 ## Design Requirements
