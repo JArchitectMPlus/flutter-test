@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:srijan_flutter_test/data/entity/quotes_response_entity.dart';
 import 'package:srijan_flutter_test/data/network/rest/utils/safe_api_call.dart';
 import 'package:srijan_flutter_test/data/source/quotes/quotes_data_sources.dart';
 import 'package:srijan_flutter_test/domain/error/network_error.dart';
