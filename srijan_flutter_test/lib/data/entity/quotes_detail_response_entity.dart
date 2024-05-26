@@ -1,6 +1,5 @@
 import 'package:srijan_flutter_test/domain/mapper/base_layer_data_tranformer.dart';
 import 'package:srijan_flutter_test/domain/model/quotes/quote_detail_response.dart';
-import 'package:srijan_flutter_test/domain/model/quotes/quotes_response.dart';
 
 class QuotesDetailResponseEntity
     extends BaseLayerDataTransformer<QuotesDetailResponseEntity, QuotesDetailResponse> {
@@ -29,6 +28,7 @@ class QuotesDetailResponseEntity
     authorSlug = json['authorSlug'];
     dateAdded = json['dateAdded'];
     dateModified = json['dateModified'];
+    tags = List<String>.from(json["tags"].map((x) => x));
   }
 
   Map<String, dynamic> toJson() {
@@ -39,8 +39,7 @@ class QuotesDetailResponseEntity
     data['dateAdded'] = dateAdded;
     data['dateModified'] = dateModified;
     data['length'] = length;
-    data['tags'] = tags;
-
+    data['tags'] = List<dynamic>.from(tags!.map((x) => x));
     return data;
   }
 

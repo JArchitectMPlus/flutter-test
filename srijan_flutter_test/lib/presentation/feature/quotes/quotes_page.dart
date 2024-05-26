@@ -22,10 +22,7 @@ class QuotesPageState extends BaseStatefulPage<QuotesViewModel, QuotesPage> {
 
   @override
   void onModelReady(QuotesViewModel model) {
-   /* model.navigate();
-    model.navigateToDashboard().listen((navigateData) {
-      Navigator.pushReplacementNamed(context, RoutePaths.quotes);
-    });*/
+
   }
 
   @override

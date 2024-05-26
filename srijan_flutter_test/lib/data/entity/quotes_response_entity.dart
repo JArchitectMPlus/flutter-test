@@ -3,7 +3,7 @@ import 'package:srijan_flutter_test/domain/model/quotes/quotes_response.dart';
 
 class QuotesResponseEntity
     extends BaseLayerDataTransformer<QuotesResponseEntity, QuotesResponse> {
-  String? sId;
+  String? id;
   String? content;
   String? author;
   List<String>? tags;
@@ -13,7 +13,7 @@ class QuotesResponseEntity
   String? dateModified;
 
   QuotesResponseEntity(
-      {this.sId,
+      {this.id,
       this.content,
       this.author,
       this.tags,
@@ -23,14 +23,14 @@ class QuotesResponseEntity
       this.dateModified});
 
   QuotesResponseEntity.fromJson(Map<String, dynamic> json) {
-    sId = json['sId'];
+    id = json['_id'];
     content = json['content'];
     author = json['author'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = Map<String, dynamic>();
-    data['sId'] = sId;
+    data['_id'] = id;
     data['content'] = content;
     data['author'] = author;
     data['authorSlug'] = authorSlug;
@@ -44,7 +44,7 @@ class QuotesResponseEntity
 
   @override
   QuotesResponse transform() => QuotesResponse(
-      sId: sId,
+      id: id,
       content: content,
       author: author,
       authorSlug: authorSlug,

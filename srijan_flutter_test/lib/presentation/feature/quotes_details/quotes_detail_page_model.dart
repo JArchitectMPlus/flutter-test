@@ -21,8 +21,7 @@ class QuotesDetailViewModel extends BasePageViewModel {
 
   final PublishSubject<Resource<QuotesDetailResponse>> _quoteListResponse = PublishSubject();
 
-  Stream<Resource<QuotesDetailResponse>> get taskListStream =>
-      _quoteListResponse.stream;
+  Stream<Resource<QuotesDetailResponse>> get quoteDetailStream => _quoteListResponse.stream;
 
   Stream<bool> navigateToDashboard() => _navigateToDashboardController.stream;
 
@@ -33,6 +32,13 @@ class QuotesDetailViewModel extends BasePageViewModel {
       _navigateToDashboardController.sink.add(true);
       _navigateToDashboardController.close();
     });
+  }
+
+  String? _quoteId;
+  String? get quoteId => _quoteId;
+  set quoteId(String? val) {
+    _quoteId = val;
+    notifyListeners();
   }
 
   //Constructor creation
@@ -48,9 +54,10 @@ class QuotesDetailViewModel extends BasePageViewModel {
       });
 
     });
+  }
 
-    _quoteListRequest.add(QuotesDetailUseCaseParam(id:"R80GBolDfAev"));
-
+  void getQuoteDetail(id){
+    _quoteListRequest.add(QuotesDetailUseCaseParam(id:_quoteId.toString()));
   }
  /* final List<QuotesResponse> _quoteList = [];
   List<QuotesResponse> get quoteList => _quoteList;

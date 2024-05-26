@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:srijan_flutter_test/build_context.dart';
+import 'package:srijan_flutter_test/presentation/app/navigation/route_paths.dart';
 import 'package:srijan_flutter_test/presentation/base/base_page.dart';
 import 'package:srijan_flutter_test/presentation/feature/quotes/quotes_page_model.dart';
+import 'package:srijan_flutter_test/presentation/feature/quotes_details/quote_detail_args_model.dart';
 import 'package:srijan_flutter_test/presentation/feature/quotes_details/quotes_detail_page.dart';
 import 'package:srijan_flutter_test/presentation/ui/app_stream_builder.dart';
 import 'package:srijan_flutter_test/presentation/utils/resource.dart';
 import 'package:srijan_flutter_test/presentation/utils/status.dart';
-import 'package:srijan_flutter_test/quote_detail_page.dart';
-import 'package:srijan_flutter_test/quotes.dart';
 
 class QuotesPageView extends BasePageViewWidget<QuotesViewModel> {
   QuotesPageView(ProviderBase<QuotesViewModel> model, {super.key})
@@ -29,8 +29,11 @@ class QuotesPageView extends BasePageViewWidget<QuotesViewModel> {
           stream: model.taskListStream,
           initialData: Resource.none(),
           onData: (data) {
-            //handleProgressIndicator(context, data.status);
+            if(data.status==Status.loading){
+                const CircularProgressIndicator(color: Colors.black,);
+            }else {
             model.quoteList = data.data;
+            }
           },
           dataBuilder: (context, data) {
             return Builder(builder: (context) => model.quoteList.isEmpty?const SizedBox.shrink()
@@ -40,12 +43,9 @@ class QuotesPageView extends BasePageViewWidget<QuotesViewModel> {
                   itemBuilder: (context, index) {
                     return GestureDetector(
                       onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => QuotesDetailPage(
-
-                                    )));
+                        Navigator.pushNamed(
+                            context, RoutePaths.quoteDetails,
+                            arguments: QuoteDetailCallArgument(quoteId: model.quoteList[index].id, index: index+1));
                       },
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),

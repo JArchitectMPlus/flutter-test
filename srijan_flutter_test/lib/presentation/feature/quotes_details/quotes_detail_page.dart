@@ -5,13 +5,16 @@ import 'package:srijan_flutter_test/presentation/app/navigation/route_paths.dart
 import 'package:srijan_flutter_test/presentation/base/base_page.dart';
 import 'package:srijan_flutter_test/presentation/feature/quotes/quotes_page_model.dart';
 import 'package:srijan_flutter_test/presentation/feature/quotes/quotes_page_view.dart';
+import 'package:srijan_flutter_test/presentation/feature/quotes_details/quote_detail_args_model.dart';
 import 'package:srijan_flutter_test/presentation/feature/quotes_details/quotes_detail_page_model.dart';
 import 'package:srijan_flutter_test/presentation/feature/quotes_details/quotes_detail_page_view.dart';
 import 'package:srijan_flutter_test/presentation/utils/color_utils.dart';
 
 class QuotesDetailPage extends BasePage<QuotesDetailViewModel> {
-  const QuotesDetailPage({Key? key}) : super(key: key);
+   QuotesDetailPage({Key? key, required this.quoteDetailCallArgument}) : super(key: key);
 
+  //final String? quoteId;
+   final QuoteDetailCallArgument quoteDetailCallArgument;
   @override
   QuotesDetailPageState createState() => QuotesDetailPageState();
 }
@@ -24,11 +27,9 @@ class QuotesDetailPageState extends BaseStatefulPage<QuotesDetailViewModel, Quot
 
   @override
   void onModelReady(QuotesDetailViewModel model) {
-   /* model.navigate();
-    model.navigateToDashboard().listen((navigateData) {
-      Navigator.pushReplacementNamed(context, RoutePaths.quotes);
-    });*/
-  }
+    model.quoteId = widget.quoteDetailCallArgument.quoteId;
+    model.getQuoteDetail(model.quoteId);
+    }
 
   @override
   bool extendBodyBehindAppBar() {
@@ -42,6 +43,6 @@ class QuotesDetailPageState extends BaseStatefulPage<QuotesDetailViewModel, Quot
 
   @override
   Widget buildView(BuildContext context, QuotesDetailViewModel model) {
-    return QuotesDetailPageView(provideBase());
+    return QuotesDetailPageView(provideBase(), widget.quoteDetailCallArgument.index ?? 0);
   }
 }

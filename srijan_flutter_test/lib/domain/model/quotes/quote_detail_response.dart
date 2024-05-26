@@ -1,5 +1,5 @@
 class QuotesDetailResponse {
-  //String? _id;
+  String? id;
   String? content;
   String? author;
   List<String>? tags;
@@ -9,7 +9,7 @@ class QuotesDetailResponse {
   String? dateModified;
 
   QuotesDetailResponse({
-    //this._id,
+    this.id,
     this.content,
     this.author,
     this.tags,

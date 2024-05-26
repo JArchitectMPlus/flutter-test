@@ -1,4 +1,5 @@
 /*
+
 import 'package:flutter/material.dart';
 import 'package:srijan_flutter_test/quotes.dart';
 import 'package:srijan_flutter_test/build_context.dart';
@@ -71,7 +72,8 @@ class QuoteDetailPage extends StatelessWidget {
                     },
                     ),
                   ),
-                  */
+
+*/
 /*Expanded(
                     child: ListView.builder(
                         shrinkWrap: true,
@@ -82,6 +84,7 @@ class QuoteDetailPage extends StatelessWidget {
                     }),
                   ),*//*
 
+
                 ],
               ),
             )
@@ -91,4 +94,5 @@ class QuoteDetailPage extends StatelessWidget {
     );
   }
 }
+
 */
