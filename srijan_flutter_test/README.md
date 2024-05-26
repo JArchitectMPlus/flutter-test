@@ -21,6 +21,8 @@ UI screen shots
 ![image info](images/quote_detail_tags.png)
 
 
+Package used to develop app
+================================================
 flutter_riverpod,riverpod - State management used
 google_fonts - fonts used to display
 fluttertoast - to display toast message
