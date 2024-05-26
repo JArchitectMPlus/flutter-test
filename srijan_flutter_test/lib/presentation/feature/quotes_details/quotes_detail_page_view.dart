@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:srijan_flutter_test/build_context.dart';
 import 'package:srijan_flutter_test/domain/model/quotes/quote_detail_response.dart';
 import 'package:srijan_flutter_test/presentation/base/base_page.dart';
 import 'package:srijan_flutter_test/presentation/feature/quotes_details/quotes_detail_page_model.dart';
 import 'package:srijan_flutter_test/presentation/ui/app_stream_builder.dart';
 import 'package:srijan_flutter_test/presentation/utils/resource.dart';
-import 'package:srijan_flutter_test/presentation/utils/status.dart';
 
 class QuotesDetailPageView extends BasePageViewWidget<QuotesDetailViewModel> {
    const QuotesDetailPageView(super.model, this.index, {super.key});

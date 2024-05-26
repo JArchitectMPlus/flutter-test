@@ -3,9 +3,7 @@ import 'dart:async';
 
 import 'package:rxdart/subjects.dart';
 import 'package:srijan_flutter_test/domain/model/quotes/quote_detail_response.dart';
-import 'package:srijan_flutter_test/domain/model/quotes/quotes_response.dart';
 import 'package:srijan_flutter_test/domain/usecase/quotes/quotes_detail_usecase.dart';
-import 'package:srijan_flutter_test/domain/usecase/quotes/quotes_usecase.dart';
 import 'package:srijan_flutter_test/presentation/base/base_page_view_model.dart';
 import 'package:srijan_flutter_test/presentation/utils/request_manager.dart';
 import 'package:srijan_flutter_test/presentation/utils/resource.dart';
