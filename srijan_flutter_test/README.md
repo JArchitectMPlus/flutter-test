@@ -14,3 +14,15 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+UI screen shots
+![image info](images/quotes_list.png)
+![image info](images/quote_detail.png)
+![image info](images/quote_detail_tags.png)
+
+
+flutter_riverpod,riverpod - State management used
+google_fonts - fonts used to display
+fluttertoast - to display toast message
+mockito - for unit test 
+
