@@ -1,0 +1,21 @@
+{
+  "appName": "Srijan Flutter Test",
+  "networkError": "Something went wrong!",
+  "home": "Home",
+  "author": "- {authorName}",
+  "@author": {
+    "description": "authorName",
+    "type": "String"
+  },
+  "quoteNumber": "Quote {count}",
+  "@quoteNumber": {
+    "description": "count",
+    "type": "int"
+  },
+  "authorName": "Author: ",
+  "dateAdded": "Date Added: ",
+  "dateModified": "Date Modified: ",
+  "tags": "Tags: ",
+
+  "errorEmptyQuoteId": "Quote id is required"
+}

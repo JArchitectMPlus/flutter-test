@@ -11,7 +11,9 @@ Following the submission of your work, you will be expected to sit through a cod
 * Good use of comments to explain the code logic.
 
 ## Code Submission
-In order to submit your work, please fork this repo and submit a pull request. There is no deadline for this assignment. However, timely submissions are encouraged as there may be other submissions under evaluation. 
+In order to submit your work, please fork this repo and submit a pull request. 
+
+There is no deadline for this assignment. However, timely submissions are encouraged as there may be other submissions under evaluation. 
 
 ## Design Requirements
 Detailed design and implementation requirements are contained in the `AppRequirements.md` file.
