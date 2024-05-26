@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:riverpod/riverpod.dart';
 import 'package:srijan_flutter_test/data/network/rest/api_interceptor.dart';
@@ -21,7 +22,7 @@ final prettyDioLoggerProvider = Provider<PrettyDioLogger>(
     responseBody: true,
     responseHeader: true,
     logPrint: (log) {
-      return print(log as String);
+      return debugPrint(log as String);
     },
   ),
 );

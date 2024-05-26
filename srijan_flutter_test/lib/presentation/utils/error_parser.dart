@@ -10,6 +10,8 @@ class ErrorParser {
     switch (error?.type) {
       case ErrorType.network:
         return localisedHelper.networkError;
+      case ErrorType.emptyQuoteId:
+        return localisedHelper.errorEmptyQuoteId;
       default:
         return "";
     }

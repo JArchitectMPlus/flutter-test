@@ -7,11 +7,11 @@ part of 'error.dart';
 // **************************************************************************
 
 Error _$ErrorFromJson(Map<String, dynamic> json) => Error(
-      json['message'] as String? ?? '',
-      json['code'] ?? -1,
+      json['statusMessage'] as String? ?? '',
+      json['statusCode'] ?? -1,
     );
 
 Map<String, dynamic> _$ErrorToJson(Error instance) => <String, dynamic>{
-      'message': instance.msg,
-      'code': instance.code,
+      'statusMessage': instance.msg,
+      'statusCode': instance.code,
     };

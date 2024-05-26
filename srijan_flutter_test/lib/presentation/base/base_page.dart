@@ -67,9 +67,9 @@ class DataProviderElement<T extends BasePageViewModel>
   final ProviderBase<T> providerBase;
 
   DataProviderElement(
-    BasePageViewWidget<T> widget,
+    BasePageViewWidget<T> super.widget,
     this.providerBase,
-  ) : super(widget);
+  );
 
   @override
   BasePageViewWidget<T> get widget => super.widget as BasePageViewWidget<T>;

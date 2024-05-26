@@ -1,17 +1,28 @@
 import 'package:srijan_flutter_test/domain/mapper/base_layer_data_tranformer.dart';
-import 'package:srijan_flutter_test/domain/model/quotes/quotes_response.dart';
+import 'package:srijan_flutter_test/domain/model/quotes/quotes.dart';
+import 'package:json_annotation/json_annotation.dart';
 
+part 'quotes_response_entity.g.dart';
+@JsonSerializable(explicitToJson: true)
 class QuotesResponseEntity
-    extends BaseLayerDataTransformer<QuotesResponseEntity, QuotesResponse> {
-  String? id;
-  String? content;
-  String? author;
-  List<String>? tags;
-  String? authorSlug;
-  int? length;
-  String? dateAdded;
-  String? dateModified;
-
+    extends BaseLayerDataTransformer<QuotesResponseEntity, Quotes> {
+  @JsonKey(name: '_id')
+  final String? id;
+  @JsonKey(name: 'content')
+  final String? content;
+  @JsonKey(name: 'author')
+  final String? author;
+  @JsonKey(name: 'tags')
+  final List<String>? tags;
+  @JsonKey(name: 'authorSlug')
+  final String? authorSlug;
+  @JsonKey(name: 'length')
+  final int? length;
+  @JsonKey(name: 'dateAdded')
+  final String? dateAdded;
+  @JsonKey(name: 'dateModified')
+  final String? dateModified;
+  
   QuotesResponseEntity(
       {this.id,
       this.content,
@@ -22,28 +33,13 @@ class QuotesResponseEntity
       this.dateAdded,
       this.dateModified});
 
-  QuotesResponseEntity.fromJson(Map<String, dynamic> json) {
-    id = json['_id'];
-    content = json['content'];
-    author = json['author'];
-  }
+  factory QuotesResponseEntity.fromJson(Map<String, dynamic> json) =>
+      _$QuotesResponseEntityFromJson(json);
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
-    data['_id'] = id;
-    data['content'] = content;
-    data['author'] = author;
-    data['authorSlug'] = authorSlug;
-    data['dateAdded'] = dateAdded;
-    data['dateModified'] = dateModified;
-    data['length'] = length;
-    data['tags'] = tags;
-
-    return data;
-  }
+  Map<String, dynamic> toJson() => _$QuotesResponseEntityToJson(this);
 
   @override
-  QuotesResponse transform() => QuotesResponse(
+  Quotes transform() => Quotes(
       id: id,
       content: content,
       author: author,

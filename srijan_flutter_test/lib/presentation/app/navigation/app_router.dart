@@ -9,13 +9,14 @@ class AppRouter {
     switch (settings.name) {
       case RoutePaths.quotes:
         return CupertinoPageRoute(
-          builder: (context) => QuotesPage(),
+          builder: (context) => const QuotesPage(),
           settings: const RouteSettings(name: RoutePaths.quotes),
         );
 
       case RoutePaths.quoteDetails:
         return CupertinoPageRoute(
-          builder: (context) => QuotesDetailPage(quoteDetailCallArgument: settings.arguments as QuoteDetailCallArgument),
+          builder: (context) => QuotesDetailPage(
+              argument: settings.arguments as QuoteDetailCallArgument),
           settings: const RouteSettings(name: RoutePaths.quoteDetails),
         );
 

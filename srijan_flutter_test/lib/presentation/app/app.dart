@@ -62,34 +62,8 @@ class App extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15)),
                   elevation: 2),
-              elevatedButtonTheme: ElevatedButtonThemeData(
-                  style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.color3,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8)),
-              )),
-              progressIndicatorTheme:
-                  const ProgressIndicatorThemeData(color: AppColors.white),
-              textSelectionTheme: TextSelectionThemeData(
-                  cursorColor: AppColors.white,
-                  selectionColor: AppColors.color3,
-                  selectionHandleColor: AppColors.white),
-              inputDecorationTheme: InputDecorationTheme(
-                hintStyle: TextStyle(
-                    color: AppColors.color3.withOpacity(0.5),
-                    fontSize: 23,
-                    fontStyle: FontStyle.normal),
-                enabledBorder: const UnderlineInputBorder(
-                    borderSide: BorderSide(color: AppColors.white, width: 1)),
-                focusedBorder: const UnderlineInputBorder(
-                    borderSide: BorderSide(color: AppColors.white, width: 1.2)),
-                errorBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: AppColors.red, width: 1)),
-                focusedErrorBorder: const UnderlineInputBorder(
-                    borderSide: BorderSide(color: AppColors.white, width: 1.2)),
-                errorStyle: TextStyle(color: AppColors.red),
-                labelStyle: TextStyle(color: AppColors.color3, fontSize: 20),
-              ),
+               progressIndicatorTheme:
+                   ProgressIndicatorThemeData(color: AppColors.color1),
             ),
             themeMode: ThemeMode.light,
             onGenerateRoute: AppRouter.generateRoute));

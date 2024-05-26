@@ -1,11 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:srijan_flutter_test/domain/error/network_error.dart';
-import 'package:srijan_flutter_test/domain/model/quotes/quotes_response.dart';
-import 'package:srijan_flutter_test/domain/model/quotes/quote_detail_response.dart';
+import 'package:srijan_flutter_test/domain/model/quotes/quotes.dart';
 
 abstract class QuotesRepository {
-  Future<Either<NetworkError, QuotesDetailResponse>> getQuoteDetail(
+  Future<Either<NetworkError, Quotes>> getQuoteDetail(
       {required String id});
 
-  Future<Either<NetworkError, List<QuotesResponse>>> getQuotes({int limit = 50});
+  Future<Either<NetworkError, List<Quotes>>> getQuotes({int limit = 50});
 }

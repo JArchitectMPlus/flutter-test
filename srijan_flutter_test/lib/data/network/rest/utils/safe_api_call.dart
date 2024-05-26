@@ -19,9 +19,9 @@ Future<Either<NetworkError, T>> safeApiCall<T>(Future<T> apiCall) async {
     }
   } on Exception catch (throwable) {
     switch (throwable.runtimeType) {
-      case DioException _:
-        if (throwable is DioExceptionType) {
-          switch ((throwable as DioExceptionType)) {
+      case DioException :
+        if (throwable is DioException) {
+          switch ((throwable as DioException).type) {
             case DioExceptionType.connectionTimeout:
               //"Connection timeout with API server";
               break;
@@ -32,9 +32,8 @@ Future<Either<NetworkError, T>> safeApiCall<T>(Future<T> apiCall) async {
               //"Receive timeout in connection with API server";
               break;
             case DioExceptionType.badResponse:
-              if (throwable is DioError) {
                 return Left(getError(apiResponse: throwable.response!));
-              }
+
               break;
             //"Received invalid status code: ${error.response.statusCode}";
             case DioExceptionType.cancel:

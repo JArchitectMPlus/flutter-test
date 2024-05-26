@@ -4,5 +4,6 @@ enum ErrorType {
   netServerMessage,
   netDefaultError,
   unknown,
-  ui
+  ui,
+  emptyQuoteId
 }

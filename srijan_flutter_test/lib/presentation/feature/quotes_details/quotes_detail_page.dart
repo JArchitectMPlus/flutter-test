@@ -1,45 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:srijan_flutter_test/di/viewmodels.dart';
+import 'package:srijan_flutter_test/generated/l10n.dart';
 import 'package:srijan_flutter_test/presentation/base/base_page.dart';
 import 'package:srijan_flutter_test/presentation/feature/quotes_details/quote_detail_args_model.dart';
 import 'package:srijan_flutter_test/presentation/feature/quotes_details/quotes_detail_page_model.dart';
 import 'package:srijan_flutter_test/presentation/feature/quotes_details/quotes_detail_page_view.dart';
-import 'package:srijan_flutter_test/presentation/utils/color_utils.dart';
 
 class QuotesDetailPage extends BasePage<QuotesDetailViewModel> {
-   QuotesDetailPage({Key? key, required this.quoteDetailCallArgument}) : super(key: key);
+  final QuoteDetailCallArgument argument;
+  const QuotesDetailPage({Key? key, required this.argument})
+      : super(key: key);
 
-  //final String? quoteId;
-   final QuoteDetailCallArgument quoteDetailCallArgument;
   @override
   QuotesDetailPageState createState() => QuotesDetailPageState();
 }
 
-class QuotesDetailPageState extends BaseStatefulPage<QuotesDetailViewModel, QuotesDetailPage> {
+class QuotesDetailPageState
+    extends BaseStatefulPage<QuotesDetailViewModel, QuotesDetailPage> {
   @override
   ProviderBase<QuotesDetailViewModel> provideBase() {
-    return quotesDetailViewModelProvider;
-  }
-
-  @override
-  void onModelReady(QuotesDetailViewModel model) {
-    model.quoteId = widget.quoteDetailCallArgument.quoteId;
-    model.getQuoteDetail(model.quoteId);
-    }
-
-  @override
-  bool extendBodyBehindAppBar() {
-    return true;
-  }
-
-  @override
-  Color scaffoldBackgroundColor() {
-    return AppColors.color1;
+    return quotesDetailViewModelProvider.call(widget.argument);
   }
 
   @override
   Widget buildView(BuildContext context, QuotesDetailViewModel model) {
-    return QuotesDetailPageView(provideBase(), widget.quoteDetailCallArgument.index ?? 0);
+    return QuotesDetailPageView(
+        provideBase(), widget.argument.index ?? 0);
+  }
+
+  @override
+  PreferredSizeWidget? buildAppbar() {
+    return AppBar(
+      elevation: 5,
+      centerTitle: true,
+      title: Text(
+        S.of(context).quoteNumber(widget.argument.index??0),
+        style: const TextStyle(fontWeight: FontWeight.bold),
+      ),
+    );
   }
 }

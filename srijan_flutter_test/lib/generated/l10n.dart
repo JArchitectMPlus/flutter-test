@@ -60,11 +60,91 @@ class S {
     );
   }
 
-  /// `Network error`
+  /// `Something went wrong!`
   String get networkError {
     return Intl.message(
-      'Network error',
+      'Something went wrong!',
       name: 'networkError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Home`
+  String get home {
+    return Intl.message(
+      'Home',
+      name: 'home',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `- {authorName}`
+  String author(Object authorName) {
+    return Intl.message(
+      '- $authorName',
+      name: 'author',
+      desc: 'authorName',
+      args: [authorName],
+    );
+  }
+
+  /// `Quote {count}`
+  String quoteNumber(Object count) {
+    return Intl.message(
+      'Quote $count',
+      name: 'quoteNumber',
+      desc: 'count',
+      args: [count],
+    );
+  }
+
+  /// `Author: `
+  String get authorName {
+    return Intl.message(
+      'Author: ',
+      name: 'authorName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Date Added: `
+  String get dateAdded {
+    return Intl.message(
+      'Date Added: ',
+      name: 'dateAdded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Date Modified: `
+  String get dateModified {
+    return Intl.message(
+      'Date Modified: ',
+      name: 'dateModified',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tags: `
+  String get tags {
+    return Intl.message(
+      'Tags: ',
+      name: 'tags',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Quote id is required`
+  String get errorEmptyQuoteId {
+    return Intl.message(
+      'Quote id is required',
+      name: 'errorEmptyQuoteId',
       desc: '',
       args: [],
     );

@@ -4,9 +4,9 @@ part 'error.g.dart';
 
 @JsonSerializable()
 class Error {
-  @JsonKey(name: "message", defaultValue: "")
+  @JsonKey(name: "statusMessage", defaultValue: "")
   final String? msg;
-  @JsonKey(name: "code", defaultValue: -1)
+  @JsonKey(name: "statusCode", defaultValue: -1)
   final dynamic code;
 
   Error(this.msg, this.code);

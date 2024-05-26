@@ -1,4 +1,4 @@
-class QuotesResponse{
+class Quotes{
   String? id;
   String? content;
   String? author;
@@ -8,7 +8,7 @@ class QuotesResponse{
   String? dateAdded;
   String? dateModified;
 
-  QuotesResponse(
+  Quotes(
       {this.id,
         this.content,
         this.author,

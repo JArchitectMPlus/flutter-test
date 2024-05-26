@@ -7,9 +7,9 @@ class LocalError extends BaseError {
   LocalError({
     required String message,
     required int localError,
-    required Exception cause,
+    required super.cause,
   }) : super(
-            error: ErrorInfo(message: message, code: localError), cause: cause);
+            error: ErrorInfo(message: message, code: localError));
 
   @override
   String getFriendlyMessage() {

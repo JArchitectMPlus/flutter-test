@@ -38,22 +38,19 @@ abstract class CoreBasePageState<VM, T extends StatefulWidget> extends State<T>
 
   /// Actual Screen which load scaffold and load UI
   Widget getLayout() {
-    return WillPopScope(
-      onWillPop: onBackPressed,
-      child: Scaffold(
-        key: _scaffoldKey,
-        backgroundColor: scaffoldBackgroundColor(),
-        appBar: buildAppbar(),
-        extendBodyBehindAppBar: extendBodyBehindAppBar(),
-        body: buildScaffoldBody(context, _viewModel as VM),
-        drawer: buildDrawer(),
-        floatingActionButton: buildFloatingActionButton(),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        drawerEnableOpenDragGesture: drawerEnableOpenDragGesture(),
-        bottomNavigationBar: buildBottomNavigationBar(),
-        bottomSheet: buildBottomSheet(),
-        resizeToAvoidBottomInset: true,
-      ),
+    return Scaffold(
+      key: _scaffoldKey,
+      backgroundColor: scaffoldBackgroundColor(),
+      appBar: buildAppbar(),
+      extendBodyBehindAppBar: extendBodyBehindAppBar(),
+      body: buildScaffoldBody(context, _viewModel as VM),
+      drawer: buildDrawer(),
+      floatingActionButton: buildFloatingActionButton(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      drawerEnableOpenDragGesture: drawerEnableOpenDragGesture(),
+      bottomNavigationBar: buildBottomNavigationBar(),
+      bottomSheet: buildBottomSheet(),
+      resizeToAvoidBottomInset: true,
     );
   }
 
