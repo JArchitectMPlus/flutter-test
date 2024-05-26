@@ -33,8 +33,6 @@ Future<Either<NetworkError, T>> safeApiCall<T>(Future<T> apiCall) async {
               break;
             case DioExceptionType.badResponse:
                 return Left(getError(apiResponse: throwable.response!));
-
-              break;
             //"Received invalid status code: ${error.response.statusCode}";
             case DioExceptionType.cancel:
               //"Request to API server was cancelled"

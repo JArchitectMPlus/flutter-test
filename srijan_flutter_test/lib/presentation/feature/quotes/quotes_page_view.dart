@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:srijan_flutter_test/domain/model/quotes/quotes.dart';
 import 'package:srijan_flutter_test/presentation/base/base_page.dart';
 import 'package:srijan_flutter_test/presentation/feature/quotes/quotes_page_model.dart';

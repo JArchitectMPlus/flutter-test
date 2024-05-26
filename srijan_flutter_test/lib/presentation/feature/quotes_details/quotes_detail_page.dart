@@ -9,8 +9,7 @@ import 'package:srijan_flutter_test/presentation/feature/quotes_details/quotes_d
 
 class QuotesDetailPage extends BasePage<QuotesDetailViewModel> {
   final QuoteDetailCallArgument argument;
-  const QuotesDetailPage({Key? key, required this.argument})
-      : super(key: key);
+  const QuotesDetailPage({super.key, required this.argument});
 
   @override
   QuotesDetailPageState createState() => QuotesDetailPageState();
