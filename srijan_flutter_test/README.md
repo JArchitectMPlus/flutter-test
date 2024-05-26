@@ -48,6 +48,6 @@ UI screen shots
 * build_runner - to generate files
   -https://pub.dev/packages/build_runner
 
-* json_serializable - generate .g files  
+* json_serializable - For handling json  
   - https://pub.dev/packages/json_serializable
 
