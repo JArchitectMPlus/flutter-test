@@ -7,8 +7,8 @@ import 'package:srijan_flutter_test/domain/repository/quotes/quotes_repository.d
 import 'package:srijan_flutter_test/domain/usecase/base/base_usecase.dart';
 import 'package:srijan_flutter_test/domain/usecase/base/params.dart';
 
-class QuotesUseCase extends BaseUseCase<BaseError, QuotesUseCaseCaseParam,
-    List<Quotes>> {
+class QuotesUseCase
+    extends BaseUseCase<BaseError, QuotesUseCaseCaseParam, List<Quotes>> {
   final QuotesRepository _quotesRepository;
 
   QuotesUseCase(this._quotesRepository);
@@ -16,13 +16,15 @@ class QuotesUseCase extends BaseUseCase<BaseError, QuotesUseCaseCaseParam,
   @override
   Future<Either<NetworkError, List<Quotes>>> execute(
       {required QuotesUseCaseCaseParam params}) {
-    return _quotesRepository.getQuotes(limit: params.limit??50);
+    return _quotesRepository.getQuotes(limit: params.limit ?? 50);
   }
 }
 
 class QuotesUseCaseCaseParam extends Params {
   final int? limit;
+
   QuotesUseCaseCaseParam({this.limit});
+
   @override
   Either<AppError, bool> verify() {
     return const Right(true);

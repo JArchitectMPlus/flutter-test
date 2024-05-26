@@ -36,6 +36,10 @@ class QuotesResponseEntity
   factory QuotesResponseEntity.fromJson(Map<String, dynamic> json) =>
       _$QuotesResponseEntityFromJson(json);
 
+  static final tResponse = ([{"_id":"AeJkfzeXkGnI","content":"The most precious gift we can offer anyone is our attention. When mindfulness embraces those we love, they will bloom like flowers.","author":"Thích Nhất Hạnh","tags":["Famous Quotes"],"authorSlug":"thich-nhat-hanh","length":131,"dateAdded":"2019-11-16","dateModified":"2023-04-14"}] as List<dynamic>)
+      .map((e) => QuotesResponseEntity.fromJson(e))
+      .toList();
+
   Map<String, dynamic> toJson() => _$QuotesResponseEntityToJson(this);
 
   @override
